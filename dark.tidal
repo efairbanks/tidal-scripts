@@ -1,0 +1,20 @@
+d1 $
+slow 1 $
+stack [
+slowspread ($) [slow 2, slow 4, slow 2, slow 8] $
+density 1 $ every 4 (# speed "0.7") $ every 3 (stut 4 0.75 0.25)
+$ slowspread ($) [
+stut 2 0.5 0.5,
+jux (degrade)
+]
+$ slowspread ($) [
+fit' 1 8 (run 8) "1 5 3 2 7 6 2 1",
+fit' 1 2 (run 2) "1 2",
+fit' 1 4 (run 4) "1 4 2 3"
+]
+$ fit' 1 4 "0 1 2 3" "1 2 3 4" $ striate 32 $ randcat [sound "factory115:3", sound "factory115:1"] # gain "0.35" |*| gain "1",
+every 3 (|*| speed "[0.5 2 -0.5]*2") $ every 5 (stut 2 0.5 2) $ slow 4 $ sound "bass3(7,16)" # up "0 3 7" # gain "0.32" |*| gain "1",
+stut 8 0.1 2.5 $ slow 2 $ sound "bass3(5,16)" # up "[0 3 7 10 11 8 4 1]/2" |*| speed "[4 8 16]*4" # gain "0.23",
+stut 8 0.1 5 $ slow 2 $ sound "bass3(5,16)" # up "[0 3 7 10 11 8 4 1]/2" |*| speed "[4 8 16]*4" # gain "0.23" |*| speed "3",
+spin 4 $ slow 8 $ striateL 128 32 $ sound "bass3" # gain "0.19" # speed "0.5" # vowel "a e i"
+]

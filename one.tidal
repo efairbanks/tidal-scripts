@@ -1,0 +1,14 @@
+d1 $ slowcat [
+stack [
+sound "{bd(3,8) bd(5,8)}/2",
+sound "sn:4(1,4,2)",
+every 4 (rev) $ density 0.5 $ sound "hh(11,16)"
+],
+stack [
+sound "bd(6,8)",
+sound "sn:4(1,4,2)",
+density 0.5 $ sound "hh(8,16,1)"
+]
+]
+
+hush

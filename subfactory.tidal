@@ -1,0 +1,21 @@
+d1 $
+fit' 1 4 (run 4) "3 2 1 0" $
+slowcat [
+striate 32 $ sound "subfactoryResample115",
+striate 32 $ sound "subfactoryReresample115"
+]
+
+cps (115/240)
+
+d1 $ append' (sound "subfactoryRereresample115halfSpeed:6") (sound "subfactoryReresample115")
+
+d1 $
+slowcat [
+  every 3 (fit1 1 4 (run 4) "0 2 1 3") $
+  fit' 1 4 (run 4) "[0 1 2 3 0 1 2*32/8 3]/2" $
+  chop 4 $ (sound "subfactoryReresample115:5" # unit "c")
+  ,
+  fit' 1 4 (run 4) "[0 1 2 3*8/4 2 3 1 2]/2" $
+  chop 4 $
+  (sound "subfactoryResample115:7" # unit "c")
+]

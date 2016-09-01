@@ -1,0 +1,41 @@
+d1 $ sound "{bd:7(3,8) bd:7(5,8), [silence cp], [silence sn:13], [silence hh:13]*2, [silence ht]*2}/4" |+| gain "1.2"
+
+d3 $ sound "{bd:7(3,8) bd:7(5,8), sn:10(1,8,4), hh:10(6,8,1)}/4" |+| gain "1.1"
+-- d2 $ sound "{bd:7(5,13), can(4,13,3), hh:10(9,13), cp(2,13,3), hh:22(1,13,7)}/2"
+d1 $ sound "{[house house:3], silence [house:7 house:3, house:4]}*2" # speed "{1 1}/1"
+
+d2 $ every 7 (0.375 <~) $ every 5 (0.875 ~>) $ every 3 (0.75 <~) $ every 2 (0.25 ~>) $ striate 16 (sound "breaks165") # speed "1" |+| gain "1.05"
+
+d2 $ every 4 (palindrome) $ every 7 (0.375 <~) $ every 5 (0.875 ~>) $ every 3 (0.75 <~) $ every 2 (0.25 ~>) $ stack [
+slow 2 $ sound "bd:7(5,8) bd:7(4,8)" |+| gain "0.7",
+density 2 $ sound "silence sn:4" |+| gain "0.7",
+density 8 $ sound "hh:10" |+| gain "1" |*| speed "2 3 2 4 2 5 7" |*| speed "0.75 0.5 0.75",
+striate 16 (sound "breaks165")
+]
+
+d1 $ slow 1 $ every 4 (0 <~) $ stack [
+sound "bd:7(4,8)" # gain "0.47" # gain "0.25",
+degradeBy 1 $ density 2 $ sound "silence sn:2" # gain "0.22" # speed "0.9",
+degradeBy 0.3 $ density 1 $ sound "hh:13(11,16)" # gain "0.21" # speed "0.9",
+degradeBy 0 $ density 4 $ sound "silence hh:10" # gain "0.27" # speed "2",
+degradeBy 0.9 $ density 1 $ slow 1 $ every 3 (0.75 ~>) $ every 2 (0.25 <~) $ striate 16 $ sound "factory115:0" # gain "0.25" |*| speed "1 0.5 2 1.5 4",
+degradeBy 0 $ superimpose (|*| speed "2") $ superimpose (|*| speed "2") $ spin 4 $ rev $ slow 8 $ striateL 128 8 $ sound "factory115:2" # gain "0.1" |+| speed "0.3" |+| vowel "a e i",
+degradeBy 0.4 $ density 1 $ every 4 (0.25 ~>) $ every 5 (0.625 <~) $ within (0.5, 1) (# speed "1.5") $ striate 16 $ sound "submarine115:1" # gain "0.25",
+degradeBy 0 $ slow 1 $ within (0.75, 1) (# speed "1") $ striate 16 $ sound "submarine115:2" # gain "0.32",
+sound "bd" # gain "0"
+]
+
+d1 $ sound "factory115"
+
+d1 $ sound silence
+d2 $ sound silence
+d3 $ sound silence
+d4 $ sound silence
+
+d4 $ sound "silence peri:7*3" |+| speed "{0.2 0.3 0.25 0.15, 1.2 1 0.8 0.6 0.4}/16" |+| gain "0.65 0.7"
+
+d5 $ sound "" |+| speed "1"
+
+cps 0.479166
+
+cps 0.7
